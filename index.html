@@ -110,7 +110,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 1.4rem 2.5rem;
+      padding: 0.75rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -119,29 +119,36 @@
     nav.scrolled {
       background: rgba(247,244,240,0.94);
       backdrop-filter: blur(14px);
-      padding: 1rem 2.5rem;
+      padding: 0.5rem 2.5rem;
       box-shadow: 0 1px 0 rgba(61,53,48,0.07);
     }
     .nav-logo {
       display: flex;
       align-items: center;
+      gap: 0.65rem;
       text-decoration: none;
       flex-shrink: 0;
     }
     .nav-logo img {
-      height: 42px;
-      width: 42px;
+      height: 72px;
+      width: 72px;
       border-radius: 50%;
       object-fit: cover;
       transition: box-shadow 0.35s, filter 0.35s;
-      /* Soft glow so it reads on dark hero */
       filter: drop-shadow(0 0 6px rgba(196,168,130,0.3));
     }
     nav.scrolled .nav-logo img {
-      /* On fog bg: subtle border ring to define the dark circle */
       box-shadow: 0 0 0 1.5px rgba(61,53,48,0.12), 0 2px 8px rgba(61,53,48,0.1);
       filter: none;
     }
+    .nav-logo span {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--white);
+      transition: color 0.35s;
+    }
+    nav.scrolled .nav-logo span { color: var(--dusk); }
     .nav-links { display: flex; gap: 2.25rem; list-style: none; }
     .nav-links a {
       font-family: var(--font-body);
@@ -959,6 +966,7 @@
       .pricing-grid { grid-template-columns: 1fr; max-width: 360px; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
+      .nav-logo span { display: none; }
       #services, #process, #pricing, #testimonials, #contact, #faq { padding: 5rem 6vw; }
       #intro-band { padding: 2.5rem 6vw; }
       footer { flex-direction: column; text-align: center; }
@@ -972,7 +980,7 @@
 
   <!-- NAV -->
   <nav id="main-nav" role="navigation" aria-label="Main navigation">
-    <a href="#" class="nav-logo" aria-label="Myokinetic Touch home"><img src="Logo.png" alt="Myokinetic Touch" /></a>
+    <a href="#" class="nav-logo" aria-label="Myokinetic Touch home"><img src="Logo.png" alt="Myokinetic Touch" /><span>Myokinetic Touch</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
